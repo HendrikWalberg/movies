@@ -1,0 +1,18 @@
+<form (ngSubmit)="searchMovie()">
+<input type="search" name="search" [(ngModel)]="searchQuery">
+<button type="submit" >Search</button>
+</form>
+
+<div *ngIf="movies">
+    <div class="grid">
+        <div *ngFor="let movie of movies.results">
+            <div class="card">
+                <img src="`https://image.tmdb.org/t/p/w500{{movie.poster_path}}`" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{movie.title}}</h5>
+                  <a routerLink="/details/{{movie.title}}" class="btn btn-primary">Details</a>
+                </div>
+              </div>
+        </div>
+        </div>
+</div>
