@@ -1,4 +1,16 @@
-<img src="https://image.tmdb.org/t/p/w300{{show.poster_path}}" class="card-img-top" alt="...">
-<p>{{show.overview}}</p>
-<p>Status: {{show.status}}</p>
-Genres:<p style="display:inline" *ngFor="let genre of show.genres"> {{genre.name}} </p>
+<div id="content">
+    <div id="image">
+        <img src="https://image.tmdb.org/t/p/w300{{show.poster_path}}" class="card-img-top" alt="...">
+    </div>
+    
+    
+    <div id="overview">
+        <h5>Synopsis:</h5>
+        <p >{{show.overview}}</p>
+    </div>
+    
+    <div id="genres">
+        <h5>Genres:</h5>
+        <p id="genres" style="display:inline" *ngFor="let genre of show.genres"> {{genre.name}} </p>
+    </div>
+ </div>

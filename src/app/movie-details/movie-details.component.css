@@ -1,0 +1,28 @@
+@media (min-width: 430px) {
+
+    img {
+        width: 30vw;
+    }
+    
+    #content {
+        font-size: 20px;
+        display: grid;
+        grid-template-areas:
+        "image img overview"
+        "image img genres"
+        ;
+    }
+
+    #image {
+        grid-area: image;
+    }
+
+    #overview {
+        grid-area: overview;
+    }
+
+    #genres {
+        grid-area: genres;
+    }
+
+}
