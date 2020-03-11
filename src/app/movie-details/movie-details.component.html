@@ -1,1 +1,5 @@
-<p>movie-details works!</p>
+<img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" class="card-img-top" alt="...">
+
+<p>{{movie.overview}}</p>
+
+Genres:<p style="display:inline" *ngFor="let genre of movie.genres"> {{genre.name}} </p>

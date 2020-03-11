@@ -7,12 +7,17 @@
     <div class="grid">
         <div *ngFor="let movie of movies.results">
             <div class="card">
-                <img src="https://image.tmdb.org/t/p/original{{movie.profile_path}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">{{movie.title}}{{movie.name}}</h5>
-                  <a *ngIf="movie.media_type == 'movie'" routerLink="/movieDetails/{{movie.id}}" class="btn btn-primary">Details</a>
-                  <a *ngIf="movie.media_type == 'person'" routerLink="/actorDetails/{{movie.id}}" class="btn btn-primary">Details</a>
-                  <a *ngIf="movie.media_type == 'tv'" routerLink="/tvDetails/{{movie.id}}" class="btn btn-primary">Details</a>
+                  <a *ngIf="movie.media_type == 'movie'" routerLink="/movieDetails/{{movie.id}}">
+                    <img *ngIf="movie.media_type == 'movie'" src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}" class="card-img-top" alt="...">
+                  </a>
+                  <a *ngIf="movie.media_type == 'person'" routerLink="/actorDetails/{{movie.id}}">
+                    <img *ngIf="movie.media_type == 'person'" src="https://image.tmdb.org/t/p/w300{{movie.profile_path}}" class="card-img-top" alt="...">
+                    <h5 *ngIf="movie.media_type == 'person'">{{movie.name}}</h5>
+                  </a>
+                  <a *ngIf="movie.media_type == 'tv'" routerLink="/tvDetails/{{movie.id}}">
+                    <img *ngIf="movie.media_type == 'tv'" src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}" class="card-img-top" alt="...">
+                  </a>
                 </div>
               </div>
         </div>

@@ -1,1 +1,4 @@
-<p>tv-details works!</p>
+<img src="https://image.tmdb.org/t/p/w300{{show.poster_path}}" class="card-img-top" alt="...">
+<p>{{show.overview}}</p>
+<p>Status: {{show.status}}</p>
+Genres:<p style="display:inline" *ngFor="let genre of show.genres"> {{genre.name}} </p>

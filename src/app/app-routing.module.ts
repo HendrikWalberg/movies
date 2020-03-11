@@ -9,9 +9,9 @@ import { TvDetailsComponent } from './tv-details/tv-details.component';
 
 const routes: Routes = [
   {path: 'popular', component: MovieListComponent},
-  {path: 'movieDetails/:searchQuery', component: MovieDetailsComponent},
-  {path: 'actorDetails/:searchQuery', component: ActorDetailsComponent},
-  {path: 'tvDetail/:searchQuery', component: TvDetailsComponent},
+  {path: 'movieDetails/:query', component: MovieDetailsComponent},
+  {path: 'actorDetails/:query', component: ActorDetailsComponent},
+  {path: 'tvDetails/:query', component: TvDetailsComponent},
   {path: '', redirectTo: 'popular', pathMatch: 'full'}
 ];
 

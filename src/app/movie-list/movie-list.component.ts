@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movies.service';
 
 import { Movie } from '../../interfaces/movie';
-import { PopularMoviesResponse } from '../../interfaces/popularMovies';
+import { SearchResponse } from '../../interfaces/searchResponse';
 
 @Component({
   selector: 'app-movie-list',
@@ -12,8 +12,8 @@ import { PopularMoviesResponse } from '../../interfaces/popularMovies';
 export class MovieListComponent implements OnInit {
 
   movies: Movie;
-  popularMovies: PopularMoviesResponse;
-  imgPath: string = 'https://image.tmdb.org/t/p/w500';
+  popularMovies: SearchResponse;
+  imgPath: string = 'https://image.tmdb.org/t/p/w300';
 
   constructor(private movieService: MovieService) { }
 

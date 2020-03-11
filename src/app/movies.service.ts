@@ -3,8 +3,10 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Movie } from '../interfaces/movie';
-import { PopularMoviesResponse } from '../interfaces/popularMovies';
+import { SearchResponse } from '../interfaces/searchResponse';
 import { isNumber } from 'util';
+import { Actor } from '../interfaces/actor';
+import { Tv } from '../interfaces/tv';
 
 @Injectable({
   providedIn: 'root'
@@ -15,26 +17,26 @@ export class MovieService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPopular(): Observable<PopularMoviesResponse> {
-    const result = this.httpClient.get<PopularMoviesResponse>(`${this.baseUrl}movie/popular?api_key=${this.key}`);
+  getPopular(): Observable<SearchResponse> {
+    const result = this.httpClient.get<SearchResponse>(`${this.baseUrl}movie/popular?api_key=${this.key}`);
     console.log(result);
     return result;
   }
   
-  getMovie(query: number): Observable<PopularMoviesResponse> {
-      return this.httpClient.get<PopularMoviesResponse>(`${this.baseUrl}movie/${query}?api_key=${this.key}`);
+  getMovie(query: number): Observable<Movie> {
+      return this.httpClient.get<Movie>(`${this.baseUrl}movie/${query}?api_key=${this.key}`);
   }
   
-  getActor(query: number): Observable<PopularMoviesResponse> {
-    return this.httpClient.get<PopularMoviesResponse>(`${this.baseUrl}person/${query}?api_key=${this.key}`);
+  getActor(query: number): Observable<Actor> {
+    return this.httpClient.get<Actor>(`${this.baseUrl}person/${query}?api_key=${this.key}`);
   }
 
-  getShowquery(query: number): Observable<PopularMoviesResponse> {
-    return this.httpClient.get<PopularMoviesResponse>(`${this.baseUrl}tv/${query}?api_key=${this.key}`);
+  getShow(query: number): Observable<Tv> {
+    return this.httpClient.get<Tv>(`${this.baseUrl}tv/${query}?api_key=${this.key}`);
   }
 
-  searchMovie(searchQuery: string): Observable<PopularMoviesResponse> {
-    const result = this.httpClient.get<PopularMoviesResponse>(`${this.baseUrl}search/multi?api_key=${this.key}&query=${searchQuery}`);
+  searchMovie(searchQuery: string): Observable<SearchResponse> {
+    const result = this.httpClient.get<SearchResponse>(`${this.baseUrl}search/multi?api_key=${this.key}&query=${searchQuery}`);
     console.log(result);
     return result;
   }

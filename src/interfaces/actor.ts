@@ -1,6 +1,9 @@
-import { Movie } from './movie';
-
 export interface Actor {
-    knownfor: Movie[];
-    
+    knownfor: string[];
+    birthday: string;
+    deathday: string;
+    id: number;
+    name: string;
+    biography: string;
+    profile_path: string;
 }

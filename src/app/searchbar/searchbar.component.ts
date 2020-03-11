@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { MovieService } from '../movies.service';
-import { Movie } from '../../interfaces/movie';
-import { PopularMoviesResponse } from '../../interfaces/popularMovies';
+
+import { SearchResponse } from '../../interfaces/searchResponse';
 
 @Component({
   selector: 'app-searchbar',
@@ -13,7 +12,7 @@ import { PopularMoviesResponse } from '../../interfaces/popularMovies';
 export class SearchbarComponent implements OnInit {
 
   public searchQuery: string;
-  movies: PopularMoviesResponse;
+  movies: SearchResponse;
 
   constructor(private movieService: MovieService) { }
 

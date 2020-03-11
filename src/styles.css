@@ -1,6 +1,13 @@
+@media (min-width: 430px) {
+
 .grid {
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
-    justify-content: space-between;
+}
+
+.card {
+    width: 20vw;
+}
+
 }
