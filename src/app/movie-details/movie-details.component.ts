@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../movies.service';
-import { Movie } from 'src/interfaces/movie';
+import { PopularMoviesResponse } from 'src/interfaces/popularMovies';
 
 @Component({
   selector: 'app-movie-details',
@@ -10,13 +10,12 @@ import { Movie } from 'src/interfaces/movie';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  @Input() title: string;
-  movie: Movie;
+  @Input() id: any;
+  movie: PopularMoviesResponse;
 
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
-    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -24,10 +23,8 @@ export class MovieDetailsComponent implements OnInit {
   }
   
   getMovie(): void {
-    console.log(this.route);
-    const title = this.route.snapshot.paramMap.get('title');
-    console.log(title);
-    this.movieService.getMovie(title).subscribe(movie => {
+    const query = this.route.snapshot.paramMap.get('searchQuery');
+    this.movieService.getMovie(parseInt(query, 10)).subscribe(movie => {
       this.movie = movie
       console.log(this.movie);
     });
