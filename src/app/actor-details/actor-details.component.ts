@@ -4,6 +4,7 @@ import { MovieService } from '../movies.service';
 import { Actor } from '../../interfaces/actor';
 
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-actor-details',
@@ -15,6 +16,7 @@ export class ActorDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
+    private location: Location
     ) { }
 
   actor: Actor;
@@ -30,4 +32,9 @@ export class ActorDetailsComponent implements OnInit {
       console.log(this.actor);
     });
   }
+
+  goBack(): void {
+    this.location.back();
+  }
+
 }

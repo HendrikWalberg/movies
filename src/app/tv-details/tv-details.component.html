@@ -9,8 +9,14 @@
         <p >{{show.overview}}</p>
     </div>
     
+    <div id="cast">
+        <h5>Cast</h5>
+            <p *ngFor="let cast of credits.cast | slice:0:5">Character: {{cast.character}} Actor: {{cast.name}}</p>
+    </div>
+
     <div id="genres">
         <h5>Genres:</h5>
         <p id="genres" style="display:inline" *ngFor="let genre of show.genres"> {{genre.name}} </p>
     </div>
  </div>
+ <button (click)="goBack()">Go back</button>

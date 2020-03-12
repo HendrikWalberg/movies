@@ -8,8 +8,9 @@
         font-size: 20px;
         display: grid;
         grid-template-areas:
-        "image img overview"
-        "image img genres"
+        "image overview"
+        "image genres"
+        "image cast"
         ;
     }
 
@@ -23,6 +24,10 @@
 
     #genres {
         grid-area: genres;
+    }
+
+    #cast {
+        grid-area: cast;
     }
 
 }
